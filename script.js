@@ -2,6 +2,10 @@ function compute()
 {
     var p, n,r;
     p = document.getElementById("principal").value;
+    if(p <= 0){
+        alert("Enter Number greater than 0")
+        return false
+    }
     n = document.getElementById("years").value;
     r = document.getElementById("rate").value;
     let interest = parseInt((p * n * r) / 100)
@@ -13,8 +17,7 @@ function compute()
     for (var x=1; x<=number; x++) {
     optionList += "<option>"+x+"</option>";
     }
-    console.log("optionList", optionList)
-    var select = document.getElementById('years')
+   var select = document.getElementById('years')
     select.innerHTML = optionList;
  
  })();
